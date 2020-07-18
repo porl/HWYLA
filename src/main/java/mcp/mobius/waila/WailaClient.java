@@ -24,6 +24,7 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.loading.moddiscovery.ModInfo;
+import net.minecraftforge.forgespi.language.IConfigurable;
 import net.minecraftforge.forgespi.language.IModInfo;
 
 import java.lang.invoke.MethodHandle;
@@ -114,7 +115,7 @@ public class WailaClient {
 
     private static class WailaModInfo extends ModInfo {
         public WailaModInfo(ModInfo modInfo) {
-            super(modInfo.getOwningFile(), modInfo.getModConfig());
+            super(modInfo.getOwningFile(), (IConfigurable) modInfo.getConfigList());
         }
 
         @Override
